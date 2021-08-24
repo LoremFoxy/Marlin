@@ -137,20 +137,17 @@
   //#define E3_HARDWARE_SERIAL Serial1
   //#define E4_HARDWARE_SERIAL Serial1
 
-  //
-  // Software serial  ##
-  //
   #define X_SERIAL_TX_PIN                   PE2
-  #define X_SERIAL_RX_PIN                   PE2
+  #define X_SERIAL_RX_PIN        X_SERIAL_TX_PIN
 
   #define Y_SERIAL_TX_PIN                   PE3
-  #define Y_SERIAL_RX_PIN                   PE3
+  #define Y_SERIAL_RX_PIN        Y_SERIAL_TX_PIN
 
   #define Z_SERIAL_TX_PIN                   PE4
-  #define Z_SERIAL_RX_PIN                   PE4
+  #define Z_SERIAL_RX_PIN        Z_SERIAL_TX_PIN
 
   #define E0_SERIAL_TX_PIN                  PD7
-  #define E0_SERIAL_RX_PIN                  PD7
+  #define E0_SERIAL_RX_PIN      E0_SERIAL_TX_PIN
 
   // Reduce baud rate to improve software serial reliability
   #define TMC_BAUD_RATE                    19200
@@ -161,6 +158,7 @@
 //
 #define TEMP_0_PIN                          PA2   // T0 <-> E0
 #define TEMP_1_PIN                          PA0   // T1 <-> E1
+#define TEMP_BOARD_PIN                      PC2   // Onboard thermistor, NTC100K
 #define TEMP_BED_PIN                        PA1   // T2 <-> Bed
 #define TEMP_PROBE_PIN                      PC3   // Shares J4 connector with PD1
 
@@ -205,13 +203,10 @@
 #define EXP2_10_PIN                         PA6
 
 // HAL SPI1 pins
-#define CUSTOM_SPI_PINS
-#if ENABLED(CUSTOM_SPI_PINS)
-  #define SD_SCK_PIN                 EXP2_09_PIN  // SPI1 SCLK
-  #define SD_SS_PIN                  EXP2_07_PIN  // SPI1 SSEL
-  #define SD_MISO_PIN                EXP2_10_PIN  // SPI1 MISO
-  #define SD_MOSI_PIN                EXP2_05_PIN  // SPI1 MOSI
-#endif
+#define SD_SCK_PIN                   EXP2_09_PIN  // SPI1 SCLK
+#define SD_SS_PIN                    EXP2_07_PIN  // SPI1 SSEL
+#define SD_MISO_PIN                  EXP2_10_PIN  // SPI1 MISO
+#define SD_MOSI_PIN                  EXP2_05_PIN  // SPI1 MOSI
 
 #define SDSS                         EXP2_07_PIN
 
